@@ -19,7 +19,7 @@ const actions = {
       "http://ddragon.leagueoflegends.com/cdn/10.22.1/data/pt_BR/champion.json"
     )
       .then(response => response.json())
-      .then(champions => commit("setChampions", Object.keys(champions.data)));
+      .then(champions => commit("setChampions", Object.values(champions.data)));
   }
 };
 
