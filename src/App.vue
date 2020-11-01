@@ -1,5 +1,5 @@
 <template>
-  <div id="#app">
+  <div id="app">
     <ShowCaseLogo :path="path" />
     <ShowcaseTitle msg="LoL Champions Showcase"/>
     <ShowCaseChampionsList />
