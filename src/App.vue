@@ -1,31 +1,30 @@
 <template>
   <div id="app">
     <ShowCaseLogo :path="path" />
-    <ShowcaseTitle msg="LoL Champions Showcase"/>
+    <ShowcaseTitle msg="LoL Champions Showcase" />
     <ShowCaseChampionsList />
   </div>
 </template>
 
 <script>
-import ShowcaseTitle from './components/ShowCaseTitle.vue';
-import ShowCaseLogo from './components/ShowCaseLogo.vue';
-import ShowCaseChampionsList from './components/ShowCaseChampiosList.vue';
-import logo from './assets/logo.png';
-
+import ShowcaseTitle from "./components/ShowCaseTitle.vue";
+import ShowCaseLogo from "./components/ShowCaseLogo.vue";
+import ShowCaseChampionsList from "./components/ShowCaseChampiosList.vue";
+import logo from "./assets/logo.png";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     ShowcaseTitle,
     ShowCaseLogo,
     ShowCaseChampionsList
   },
-  data () {
+  data() {
     return {
       path: logo
-    }
+    };
   }
-}
+};
 </script>
 
 <style>
