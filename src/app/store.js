@@ -23,9 +23,7 @@ const actions = {
 }
 
 const store = createStore({
-  state () {
-    return state;
-  },
+  state,
   actions,
   mutations
 });

@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li v-for="champion in $store.state.champions" :key="champion">
+    <li class="list-item" v-for="champion in $store.state.champions" :key="champion">
       {{champion}}
       </li>
   </ul>
@@ -21,3 +21,9 @@
     }
   }
 </script>
+
+<style scoped>
+  .list-item {
+    list-style-type: none;
+  }
+</style>
