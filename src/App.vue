@@ -1,15 +1,29 @@
 <template>
-  <img class="logo" alt="League of Legends logo" src="./assets/logo.png">
-  <ShowcaseTitle msg="LoL Champions Showcase"/>
+  <div id="#app">
+    <ShowCaseLogo :path="path" />
+    <ShowcaseTitle msg="LoL Champions Showcase"/>
+    <ShowCaseChampionsList />
+  </div>
 </template>
 
 <script>
 import ShowcaseTitle from './components/ShowCaseTitle.vue';
+import ShowCaseLogo from './components/ShowCaseLogo.vue';
+import ShowCaseChampionsList from './components/ShowCaseChampiosList.vue';
+import logo from './assets/logo.png';
+
 
 export default {
   name: 'App',
   components: {
-    ShowcaseTitle
+    ShowcaseTitle,
+    ShowCaseLogo,
+    ShowCaseChampionsList
+  },
+  data () {
+    return {
+      path: logo
+    }
   }
 }
 </script>
