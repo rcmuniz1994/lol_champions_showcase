@@ -1,9 +1,15 @@
 <template>
   <b-container class="pt-5">
-    <b-row cols="6">
+    <b-row>
+      <b-input
+        v-model.trim="championsCriteria"
+        placeholder="Champion's name..."
+      ></b-input>
+    </b-row>
+    <b-row class="pt-5" cols="6">
       <b-col
         class="list-item"
-        v-for="champion in $store.state.champions"
+        v-for="champion in filteredChampions"
         :key="champion.id"
       >
         <ShowCaseChampionsImage
@@ -17,13 +23,28 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import ShowCaseChampionsImage from "./ShowCaseChampionImage.vue";
 
 export default {
   name: "ShowCaseChampionsList",
   components: {
     ShowCaseChampionsImage
+  },
+  data() {
+    return {
+      championsCriteria: ""
+    };
+  },
+  computed: {
+    ...mapGetters(["champions"]),
+    filteredChampions() {
+      return this.champions.filter(champion =>
+        champion.name
+          .toLowerCase()
+          .startsWith(this.championsCriteria.toLowerCase())
+      );
+    }
   },
   methods: {
     ...mapActions(["retrieveChampions"])

@@ -23,10 +23,15 @@ const actions = {
   }
 };
 
+const getters = {
+  champions: state => state.champions
+};
+
 const store = new Vuex.Store({
   state,
   actions,
-  mutations
+  mutations,
+  getters
 });
 
 export default store;
