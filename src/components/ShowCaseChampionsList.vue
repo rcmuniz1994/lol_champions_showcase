@@ -40,9 +40,11 @@ export default {
     ...mapGetters(["champions"]),
     filteredChampions() {
       return this.champions.filter(champion =>
-        champion.name
-          .toLowerCase()
-          .includes(this.championsCriteria.toLowerCase())
+        this.championsCriteria.length > 2
+          ? champion.name
+              .toLowerCase()
+              .includes(this.championsCriteria.toLowerCase())
+          : champion.name
       );
     }
   },
