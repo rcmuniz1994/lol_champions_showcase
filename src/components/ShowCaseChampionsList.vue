@@ -39,12 +39,10 @@ export default {
   computed: {
     ...mapGetters(["champions"]),
     filteredChampions() {
-      return this.champions.filter(champion =>
-        this.championsCriteria.length > 2
-          ? champion.name
-              .toLowerCase()
-              .includes(this.championsCriteria.toLowerCase())
-          : champion.name
+      const { championsCriteria, champions } = this;
+      if (championsCriteria.length < 3) return champions;
+      return champions.filter(({ name }) =>
+        name.toUpperCase().includes(championsCriteria.toUpperCase())
       );
     }
   },
