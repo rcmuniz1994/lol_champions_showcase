@@ -9,7 +9,7 @@
 <script>
 import ShowcaseTitle from "./components/ShowCaseTitle.vue";
 import ShowCaseLogo from "./components/ShowCaseLogo.vue";
-import ShowCaseChampionsList from "./components/ShowCaseChampiosList.vue";
+import ShowCaseChampionsList from "./components/ShowCaseChampionsList.vue";
 import logo from "./assets/logo.png";
 
 export default {
