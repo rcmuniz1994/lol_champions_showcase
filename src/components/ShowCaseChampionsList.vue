@@ -42,7 +42,7 @@ export default {
       return this.champions.filter(champion =>
         champion.name
           .toLowerCase()
-          .startsWith(this.championsCriteria.toLowerCase())
+          .includes(this.championsCriteria.toLowerCase())
       );
     }
   },
